@@ -16,13 +16,22 @@
     <h1>Hello world</h1>
     {% endif%}
 
+    {{ result }}
+    <!-- 
     <ul>
         {% for product in products %}
         <li>
-            {{ product.title }}
+            {{ product.title }} - {{ product.collection.title}}
         </li>
         {% endfor %}
     </ul>
+    <ul> -->
+    <!-- {% for order in orders %}
+    <li>
+        {{ order.id }} - {{ order.customer.first_name}}
+    </li>
+    {% endfor %}
+    </ul> -->
 
 </body>
 
