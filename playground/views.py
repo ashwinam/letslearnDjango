@@ -110,24 +110,26 @@ from tags.models import TaggedItem
 
 #     return render(request, 'hello.html', {'name': 'ashwin'})
 
-@transaction.atomic()  # using decorator we can create a transaction function seperatoly
+# @transaction.atomic()  # using decorator we can create a transaction function seperatoly
+# def say_hello(request):
+#     # ......... some code here
+#     #  you want for specific db operation wants to use transaction, context manager
+#     with transaction.atomic():
+#         order = Order()
+#         order.customer__id = 1
+#         order.save()
+
+#     # In relational Databse always create a parent record first before createing chld record
+#         # above code is parent record and below one is child because of foreign relation
+
+#         item = OrderItem()
+#         item.order = order
+#         item.product_id = 1
+#         item.quantity = 1
+#         item.unit_price = 10
+#         item.save()
+#     return render(request, 'hello.html', {'name': 'ashwin'})
 def say_hello(request):
-    # ......... some code here
-    #  you want for specific db operation wants to use transaction, context manager
-    with transaction.atomic():
-        order = Order()
-        order.customer__id = 1
-        order.save()
-
-    # In relational Databse always create a parent record first before createing chld record
-        # above code is parent record and below one is child because of foreign relation
-
-        item = OrderItem()
-        item.order = order
-        item.product_id = 1
-        item.quantity = 1
-        item.unit_price = 10
-        item.save()
     return render(request, 'hello.html', {'name': 'ashwin'})
 
 
